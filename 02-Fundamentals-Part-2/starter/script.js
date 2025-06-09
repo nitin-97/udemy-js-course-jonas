@@ -62,11 +62,23 @@
 
 // console.log(yearsUntilRetirement(1997));
 
-const yearsUntilRetirement = (birthyear, firstname) => {
-  const age = 2025 - birthyear;
-  const retirement = 65 - age;
+// const yearsUntilRetirement = (birthyear, firstname) => {
+//   const age = 2025 - birthyear;
+//   const retirement = 65 - age;
 
-  return `${firstname} is retiring after ${retirement} years;`;
+//   return `${firstname} is retiring after ${retirement} years;`;
+// };
+
+// console.log(yearsUntilRetirement(1997, "Nitin"));
+
+const cutPieces = function (fruit) {
+  return fruit * 4;
 };
+function fruitProcessor(apple, oranges) {
+  const applePieces = cutPieces(apple);
+  const ornagePieces = cutPieces(oranges);
+  const juice = `juice with ${applePieces} Pieces of apple and ${ornagePieces} pieces of Oranges`;
+  return juice;
+}
 
-console.log(yearsUntilRetirement(1997, "Nitin"));
+console.log(fruitProcessor(2, 3));
