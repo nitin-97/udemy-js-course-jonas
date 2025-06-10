@@ -200,13 +200,121 @@
 //   const totals[0] = bills[0] + tips[0];
 // };
 
-const calcTip = function (bill) {
-  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// const calcTip = function (bill) {
+//   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// };
+
+// const bills = [125, 555, 44];
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+
+// console.log(bills, tips);
+// console.log(total);
+
+// const nitin = {
+//   firstName: "nitin",
+//   lastName: "singh",
+//   age: 2025 - 1997,
+//   job: "Software Engineer",
+//   codingLanguages: ["HTML", "CSS", "Bootstrap5", "Javascript", "GIT"],
+// };
+
+// dot operator
+
+// console.log(nitin);
+// console.log(
+//   nitin.firstName,
+//   nitin.lastName,
+//   nitin.age,
+//   nitin.job,
+//   nitin.codingLanguages
+// );
+
+//bracket
+
+// console.log(
+//   nitin["firstName"],
+//   nitin["lastName"],
+//   nitin["job"],
+//   nitin["age"],
+//   nitin["codingLanguages"]
+// );
+
+// const namekey = "Name";
+// console.log(nitin["first" + namekey]);
+// console.log(nitin["last" + namekey]);
+
+// in bracket we can have the expression , like the first and namekey is addingup and forming the key
+
+// console.log(nitin.'last'+namekey) this is wrong
+
+// const intrestedIn = prompt(
+//   "what do you want to know about Nitin? choose between firstName , lastName, age, job, and codingLanguages"
+// );
+// // console.log(nitin[intrestedIn]);
+// if (nitin[intrestedIn]) {
+//   console.log(nitin[intrestedIn]);
+// } else {
+//   console.log(
+//     "wrong request",
+//     "what do you want to know about Nitin? choose between firstName , lastName, age, job, and codingLanguages"
+//   );
+// }
+
+// nitin.location = "Gr. Noida";
+// nitin["course"] = "udemy";
+// console.log(nitin);
+
+// console.log(
+//   `${nitin.firstName} has ${nitin.codingLanguages.length} coding skills and his best is ${nitin.codingLanguages[3]}`
+// );
+
+// const nitin = {
+//   firstName: "nitin",
+//   lastName: "singh",
+//   birthYear: 1997,
+//   job: "Software Engineer",
+//   codingLanguages: ["HTML", "CSS", "Bootstrap5", "Javascript", "GIT"],
+//   calcAge: function () {
+//     console.log(this);
+//     return 2025 - this.birthYear;
+//   },
+// };
+
+// console.log(nitin.calcAge());
+
+const nitin = {
+  firstName: "nitin",
+  lastName: "singh",
+  birthYear: 1997,
+  job: "Software Engineer",
+  hasDriversLicense: true,
+  codingLanguages: ["HTML", "CSS", "Bootstrap5", "Javascript", "GIT"],
+  calcAge: function () {
+    this.age = 2025 - this.birthYear;
+    return this.age;
+  },
+  checKDriverLicense: function () {
+    if (this.hasDriversLicense) {
+      console.log(
+        `${this.firstName} is a ${this.calcAge()} year's old ${
+          this.job
+        }, and he has a driver's license`
+      );
+    } else {
+      console.log(
+        `${this.firstName} is a ${this.calcAge()} year's old ${
+          this.job
+        }, and he has no driver's license`
+      );
+    }
+  },
+  checKDriverLicense: function () {
+    return `${this.firstName} is a ${this.calcAge()} year's old ${
+      this.job
+    }, and he has ${this.hasDriversLicense ? "a " : "no"}driver's license`;
+  },
 };
 
-const bills = [125, 555, 44];
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
-
-console.log(bills, tips);
-console.log(total);
+// console.log(nitin.calcAge());
+console.log(nitin.checKDriverLicense());
